@@ -51,35 +51,43 @@ body {
   font-weight: normal;
 }
 
-.login-form input {
+#loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; 
+  width: 100%;
+}
+
+#loginForm input {
   padding: 12px;
-  margin-bottom: 15px;
   border: 1px solid #cccccc;
   border-radius: 6px;
   font-size: 15px;
+  transition: all 0.2s ease-in-out;
 }
 
-input:focus {
+#loginForm input:focus {
   outline: 1px solid blue;
 }
 
-input:hover {
+#loginForm input:hover {
   transform: scale(1.02);
-  transition: all 0.1s ease-in-out;
 }
 
-.login-form button {
+#loginForm button {
   padding: 15px;
   background-color: #3471B8;
   border: none;
   border-radius: 6px;
   color: white;
   font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
   transition: background 0.3s;
+  margin-top: 5px;
 }
 
-.login-form button:hover {
+#loginForm button:hover {
   background-color: #024A76;
 }
 

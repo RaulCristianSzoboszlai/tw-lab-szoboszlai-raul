@@ -1,11 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="ro">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login Page</title>
     <link rel="stylesheet" href="../CSS/style.css" />
     <link rel="stylesheet" href="../CSS/login_style.css" />
+    <script src="../js/login_js.js" defer></script>
   </head>
   <body>
     <div class="login-container">
@@ -15,9 +16,11 @@
       <div class="separator"></div>
       <div class="login-form">
         <h2>Login</h2>
-        <input type="email" placeholder="Email" />
-        <input type="password" placeholder="Parola" />
-        <button>Autentificare</button>
+        <form id="loginForm">
+          <input type="email" id="email" placeholder="Email" required />
+          <input type="password" id="password" placeholder="Parola" required />
+          <button type="submit">Autentificare</button>
+        </form>
         <p class="register-text">
           Nu ai cont? <a href="register.html">Înregistrează-te</a>
         </p>
