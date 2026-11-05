@@ -1,0 +1,18 @@
+/* Ascunde cursorul nativ, ramane doar cel personalizat */
+* {
+  cursor: none;
+}
+
+#cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: hsl(0, 100%, 50%);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  z-index: 9999;
+  transform: translate(-50%, -50%); /* Centreaza cercul pe pozitia mouse-ului */
+  pointer-events: none; /* Click-urile trec prin cursor catre elementele de sub el */
+}
