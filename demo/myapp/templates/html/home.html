@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/home_style.css">
-    <link rel="stylesheet" href="../css/cursor.css">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home_style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cursor.css' %}">
     <title>Home Page</title>
 </head>
 <body>
@@ -12,23 +13,24 @@
         <div class="container">
             <h1>Comunitatea de Tehnologii Web 2025</h1>
             <nav>
-                <a href="#">Acasă</a>
-                <a href="galerie.html">Galerie</a>
-                <a href="universities.html">Universități</a>
-                <a href="chatbot.html">ChatBot</a>
-                <a href="login.html">Logout</a>
+                <a href="{% url 'home' %}">Acasă</a>
+                <a href="{% url 'galerie' %}">Galerie</a>
+                <a href="{% url 'universities' %}">Universități</a>
+                <a href="{% url 'chatbot' %}">ChatBot</a>
+                <a href="{% url 'login' %}">Logout</a>
             </nav>
         </div>
     </header>
 
     <main class="container">
+        {% block content %}
         <section class="columns">
             <div class="column">
                 <h2>Lista de facultăți</h2>
                 <p>Descoperă oferta educațională și programele disponibile în cadrul universității noastre.</p>
-                <a href="universities.html" class="btn">Vezi mai mult</a>
+                <a href="{% url 'universities' %}" class="btn">Vezi mai mult</a>
             </div>
-            
+
             <div class="column">
                 <h2>Tehnologii relevante</h2>
                 <p>Află care sunt cele mai căutate tehnologii web și cum să le integrezi în proiectele tale.</p>
@@ -38,9 +40,10 @@
             <div class="column">
                 <h2>ChatBot</h2>
                 <p>Interacționează cu asistentul nostru virtual pentru a primi răspunsuri rapide la întrebări.</p>
-                <a href="./chatbot.html" class="btn">Vezi mai mult</a>
+                <a href="{% url 'chatbot' %}" class="btn">Vezi mai mult</a>
             </div>
         </section>
+        {% endblock %}
     </main>
 
     <footer>
@@ -53,6 +56,6 @@
         </div>
     </footer>
 
-    <script src="../js/cursor.js"></script>
+    <script src="{% static 'js/cursor.js' %}"></script>
 </body>
 </html>

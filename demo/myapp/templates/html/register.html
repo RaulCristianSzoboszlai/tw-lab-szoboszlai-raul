@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/register_style.css">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/register_style.css' %}">
     <title>Register Page</title>
 </head>
 <body>
     <main class="page">
+        {% block content %}
         <section class="card">
             <h1>Înregistrează-te</h1>
             <form class="register-form" action="#" method="post" enctype="multipart/form-data">
@@ -75,10 +77,11 @@
                 </div>
                 <p class="login-link">
                     Ai deja cont?
-                    <a href="login.html">Mergi la login</a>
+                    <a href="{% url 'login' %}">Mergi la login</a>
                 </p>
             </form>
         </section>
+        {% endblock %}
     </main>
 </body>
 </html>

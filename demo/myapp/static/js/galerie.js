@@ -1,9 +1,9 @@
 "use strict";
 const images = [
-    "../media/g1.jpg",
-    "../media/g2.jpg",
-    "../media/g3.jpg",
-    "../media/g4.jpg",
+    "/static/media/g1.jpg",
+    "/static/media/g2.jpg",
+    "/static/media/g3.jpg",
+    "/static/media/g4.jpg",
 ];
 const mainImage = document.getElementById("carousel-image");
 if (!mainImage)

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home_style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/galerie.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cursor.css' %}">
+    <title>Galerie</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Galerie</h1>
+            <nav>
+                <a href="{% url 'home' %}">Acasă</a>
+                <a href="{% url 'galerie' %}">Galerie</a>
+                <a href="{% url 'universities' %}">Universități</a>
+                <a href="{% url 'chatbot' %}">ChatBot</a>
+                <a href="{% url 'login' %}">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        {% block content %}
+        <!-- Container principal pentru carusel -->
+        <div class="carousel-container">
+            <!-- Container pentru imaginea mare -->
+            <div class="carousel-view">
+                <!-- Imaginea curenta din carusel -->
+                <img id="carousel-image" src="{% static 'media/g1.jpg' %}" alt="Carusel">
+            </div>
+        </div>
+        {% endblock %}
+    </main>
+
+    <script src="{% static 'js/cursor.js' %}"></script>
+    <script src="{% static 'js/galerie.js' %}"></script>
+</body>
+</html>

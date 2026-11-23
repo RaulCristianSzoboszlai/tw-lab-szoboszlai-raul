@@ -4,20 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chatbot</title>
-    <link rel="stylesheet" href="../CSS/chatbot_style.css" />
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/chatbot_style.css' %}" />
   </head>
   <body>
     <div class="header-actions">
-      <a href="home.html" class="back-link">&larr; Înapoi la Acasă</a>
+      <a href="{% url 'home' %}" class="back-link">&larr; Înapoi la Acasă</a>
     </div>
-    
+
+    {% block content %}
     <div class="chat-container" id="chat-container"></div>
-    
+
     <form id="chat-form">
       <input type="text" id="user-input" placeholder="Răspunde aici (a, b sau c)..." autocomplete="off" />
       <button type="submit">Trimite</button>
     </form>
-    
-    <script src="../JS/chatbot_js.js"></script>
+    {% endblock %}
+
+    <script src="{% static 'js/chatbot_js.js' %}"></script>
   </body>
 </html>

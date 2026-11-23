@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="refresh" content="2;url={% url 'login' %}">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/loading_style.css' %}" />
+    <title>Loading Page</title>
+  </head>
+  <body>
+    {% block content %}
+    <div class="loading-container">
+      <img src="{% static 'media/logo.png' %}" alt="Logo FMI" class="logo" />
+      <div class="loader"></div>
+    </div>
+    {% endblock %}
+  </body>
+</html>
